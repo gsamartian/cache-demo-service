@@ -1,7 +1,6 @@
 Purpose
 -------
-The purpose of this demo service is to showcase how the caching-component library
-can be added to it for caching.
+The purpose of this demo service is to show-case how the caching-component library  can be added to it to enable caching.
 
 It uses the 'caching-component' library as available in, https://github.com/gsamartian/caching-component
 
@@ -10,13 +9,13 @@ Details
 The Service exposes below end-points
 ====================================
 
-Endpoints for Fetching Entities by Id
+End-points for Fetching Entities by Id
 *************************************
 GET /members/{id}
 GET /users/{id}
 
 
-Endpoints for Invalidating Caches
+End-points for Invalidating Caches
 *******************************
 DELETE /cache/users/{id}
 DELETE /cache/users
@@ -44,6 +43,8 @@ app:
 We can specify one or more caches as required by the service.
 For each cache, we can provide a 'name', either TTL of cache as 'expiry-seconds' or as a absolute time using 'expiry-time'
 If using 'expiry-time', the format to be followed is same as Standard CRON format.
+For More Details refer to, https://www.baeldung.com/cron-expressions
+
 
 If the expiry-time as provided by the CRON format is triggered then the cache associated by the 'app.cache-config.name' would
 be cleared/flushed.
