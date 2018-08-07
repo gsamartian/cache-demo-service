@@ -1,0 +1,23 @@
+server:
+  port: 8090
+
+spring:
+  cache:
+    type: redis  
+  redis:
+    host: 127.0.0.1
+    port: 6380
+
+  
+logging:
+  level:
+    redis.clients: DEBUG      
+    
+app:
+  cache-config:
+  - name: members
+    expiry-seconds: 60
+  - name: users
+    expiry-time: "0 * * * * ?"   
+  - name: plans
+    expiry-time: "0 55 23 * * ?"       
