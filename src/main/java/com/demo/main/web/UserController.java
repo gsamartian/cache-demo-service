@@ -28,7 +28,7 @@ public class UserController {
 	@Cacheable(value = "members", key = "#id")
 	@GetMapping("/members/{id}")
 	public User getMembers(@PathVariable long id) {
-		LOG.info("Getting user with ID {}.", id);
+		LOG.info("Getting member with ID {}.", id);
 		return userService.getUserById(id);
 	}
 	
@@ -40,25 +40,4 @@ public class UserController {
 		return userService.getUserById(id);
 	}
 
-//	@CachePut(value = "users", key = "#id")
-//	@PutMapping("/{id}")
-//	public User updateUserById(@PathVariable long id, @RequestBody User user) {
-//		LOG.info("Updating user with ID {}.", id);
-//		userService.updateUserById(id, user);
-//		return user;
-//	}
-//
-//	@CacheEvict(value = "users", key = "#id")
-//	@DeleteMapping
-//	public void deleteUserByID(@PathVariable Long id) {
-//		LOG.info("deleting person with id {}", id);
-//		userService.deleteUserById(id);
-//	}
-//	
-//	@Cacheable(value = "users")
-//	@GetMapping
-//	public List<User> getAllUsers() {
-//		LOG.info("Fetching All Users");
-//		return userService.getAllUsers();
-//	}
 }

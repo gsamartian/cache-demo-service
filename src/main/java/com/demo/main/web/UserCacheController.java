@@ -15,13 +15,13 @@ public class UserCacheController {
 
 	@CacheEvict(value = "users", key = "#id", allEntries = false)
 	@DeleteMapping("/users/{userId}")
-	public void deleteFromCache(@PathVariable Long id) {
+	public void deleteFromUserCacheById(@PathVariable Long id) {
 		LOG.info("deleting User from cache with id {}", id);
 	}
 
 	@CacheEvict(value = "users", allEntries = true)
 	@DeleteMapping("/users")
-	public void deleteAllFromCache() {
+	public void deleteAllFromUserCache() {
 		LOG.info("deleting All Users from cache with id {}");
 	}
 }
