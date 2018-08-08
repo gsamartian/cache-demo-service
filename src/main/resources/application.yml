@@ -1,24 +1,32 @@
+#Port the service listens for requests
 server:
   port: 8090
 
+#Disable Management Security to access actuator management endpoints in DEV
+management:
+  security:
+    enabled: false
+ 
+#Spring Caching and Redis Server Configuration    
 spring:
   cache:
-    type: redis  
+    type: redis  #The Type of Caching Provider ( Provide value as 'none' to disable caching )
   redis:
     host: 127.0.0.1
     port: 6380
 
   
-   
+#Application Specific Cache Configuration
+#Provide the name for the cache, its expiry/TTL as seconds or in absolute value using expiry-time
 app:
   cache-config:
-  - name: members
-    expiry-seconds: 60
+  - name: members                 #Name of the Cache
+    expiry-seconds: 60            #Expiry/TTL Seconds for the Cache
   - name: users
-    expiry-time: "0 * * * * ?"   
+    expiry-time: "0 * * * * ?"    #Standard CRON Format
   - name: plans
     expiry-time: "0 55 23 * * ?"   
     
 
-    
+
 

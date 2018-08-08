@@ -23,28 +23,27 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		LOG.info("Fetching All Persons");
+		LOG.debug("Fetching All Persons");
 		return userRepository.findAll();
 	}
 
 	@Override
 	public User getUserById(long id) {
-		LOG.info("Getting user with ID {}.", id);
+		LOG.debug("Getting user with ID {}.", id);
 		return userRepository.findOne(id);
 	}
 
 	@Override
 	public User updateUserById(long id, User user) {
-		LOG.info("Updating user with ID {}.", id);
+		LOG.debug("Updating user with ID {}.", id);
 		userRepository.save(user);
 		return user;
 	}
 
 	@Override
 	public void deleteUserById(long id) {
-		LOG.info("deleting person with id {}", id);
+		LOG.debug("deleting person with id {}", id);
 		userRepository.delete(id);
-
 	}
 
 }

@@ -12,7 +12,7 @@
 },
 {
   "name": "app.cache-config.expiry-seconds",
-  "type": "java.lang.String",
+  "type": "java.lang.Long",
   "description":"TTL for Cache in Seconds"
 },
 {
