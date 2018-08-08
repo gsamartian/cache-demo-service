@@ -1,15 +1,15 @@
 # Demo Cache Service
-##Purpose
+## Purpose
 
 * The purpose of this demo service is to show-case how the caching-component library  can be added to it to enable   caching.
 
 * It uses the **'caching-component'** library as available in, [Caching-Component](https://github.com/gsamartian/caching-component)
 
-##Details
+## Details
 
 The Service exposes below end-points
 
-##End-points for Fetching Entities by Id
+## End-points for Fetching Entities by Id
 
 ```
 GET /members/{id}
@@ -18,23 +18,23 @@ GET /users/{id}
 
 
 
-##End-points for Invalidating Caches
+## End-points for Invalidating Caches
 
 ```
 DELETE /cache/users/{id}
 DELETE /cache/users
 ```
 
-##Note:
+## Note:
 
 Ensure Redis Server is up and running before starting the service
 
 
-##Application Configuration
+## Application Configuration
 
 The App can be configured for Caching as below,
 
-##Cache Configuration
+## Cache Configuration
 
 ```
 app:
