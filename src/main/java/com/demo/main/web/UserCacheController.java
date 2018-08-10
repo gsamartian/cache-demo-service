@@ -14,7 +14,7 @@ public class UserCacheController {
 	private final Logger LOG = LoggerFactory.getLogger(getClass());
 
 	@CacheEvict(value = "users", key = "#id", allEntries = false)
-	@DeleteMapping("/users/{userId}")
+	@DeleteMapping("/users/{id}")
 	public void deleteFromUserCacheById(@PathVariable Long id) {
 		LOG.info("deleting User from cache with id {}", id);
 	}
